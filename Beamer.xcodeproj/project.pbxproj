@@ -7,18 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC80986A2058156F009634B0 /* RecentJobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8098692058156F009634B0 /* RecentJobsTableViewController.swift */; };
+		FC80986C20581A0C009634B0 /* RecentJobsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC80986B20581A0C009634B0 /* RecentJobsTableViewCell.swift */; };
 		FCEACFD5204F0C9E00FFC15F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEACFD4204F0C9E00FFC15F /* AppDelegate.swift */; };
 		FCEACFD7204F0C9E00FFC15F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEACFD6204F0C9E00FFC15F /* Assets.xcassets */; };
 		FCEACFDA204F0C9E00FFC15F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEACFD8204F0C9E00FFC15F /* MainMenu.xib */; };
+		FCEACFE3204F12D100FFC15F /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEACFE2204F12D100FFC15F /* StatusMenuController.swift */; };
+		FCEACFE72057232200FFC15F /* BeamerC.c in Sources */ = {isa = PBXBuildFile; fileRef = FCEACFE62057232200FFC15F /* BeamerC.c */; };
+		FCEACFE920572C8A00FFC15F /* WatchPidWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEACFE820572C8A00FFC15F /* WatchPidWrapper.swift */; };
+		FCEACFF120573DBC00FFC15F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEACFF020573DBC00FFC15F /* AppDelegate.swift */; };
+		FCEACFF320573DBC00FFC15F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEACFF220573DBC00FFC15F /* ViewController.swift */; };
+		FCEACFF620573DBD00FFC15F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCEACFF420573DBD00FFC15F /* Main.storyboard */; };
+		FCEACFF820573DBD00FFC15F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEACFF720573DBD00FFC15F /* Assets.xcassets */; };
+		FCEACFFB20573DBD00FFC15F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCEACFF920573DBD00FFC15F /* LaunchScreen.storyboard */; };
+		FCEAD00C2057852500FFC15F /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEAD00B2057852500FFC15F /* CocoaAsyncSocket.framework */; };
+		FCEAD00E2057854900FFC15F /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEAD00D2057854900FFC15F /* CocoaAsyncSocket.framework */; };
+		FCEAD01220578B4500FFC15F /* BeamerServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAD01120578B4500FFC15F /* BeamerServer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC8098692058156F009634B0 /* RecentJobsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentJobsTableViewController.swift; sourceTree = "<group>"; };
+		FC80986B20581A0C009634B0 /* RecentJobsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentJobsTableViewCell.swift; sourceTree = "<group>"; };
 		FCEACFD1204F0C9E00FFC15F /* Beamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCEACFD4204F0C9E00FFC15F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCEACFD6204F0C9E00FFC15F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCEACFD9204F0C9E00FFC15F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FCEACFDB204F0C9E00FFC15F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCEACFDC204F0C9E00FFC15F /* Beamer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Beamer.entitlements; sourceTree = "<group>"; };
+		FCEACFE2204F12D100FFC15F /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		FCEACFE42057232100FFC15F /* Beamer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Beamer-Bridging-Header.h"; sourceTree = "<group>"; };
+		FCEACFE52057232200FFC15F /* BeamerC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BeamerC.h; sourceTree = "<group>"; };
+		FCEACFE62057232200FFC15F /* BeamerC.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = BeamerC.c; sourceTree = "<group>"; };
+		FCEACFE820572C8A00FFC15F /* WatchPidWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPidWrapper.swift; sourceTree = "<group>"; };
+		FCEACFEE20573DBC00FFC15F /* BeamerIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeamerIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCEACFF020573DBC00FFC15F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FCEACFF220573DBC00FFC15F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FCEACFF520573DBD00FFC15F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FCEACFF720573DBD00FFC15F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCEACFFA20573DBD00FFC15F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FCEACFFC20573DBD00FFC15F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCEAD00B2057852500FFC15F /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/Mac/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		FCEAD00D2057854900FFC15F /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		FCEAD01120578B4500FFC15F /* BeamerServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeamerServer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +56,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCEAD00C2057852500FFC15F /* CocoaAsyncSocket.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCEACFEB20573DBC00FFC15F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCEAD00E2057854900FFC15F /* CocoaAsyncSocket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,7 +75,9 @@
 			isa = PBXGroup;
 			children = (
 				FCEACFD3204F0C9E00FFC15F /* Beamer */,
+				FCEACFEF20573DBC00FFC15F /* BeamerIOS */,
 				FCEACFD2204F0C9E00FFC15F /* Products */,
+				FCEAD00A2057852400FFC15F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -44,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				FCEACFD1204F0C9E00FFC15F /* Beamer.app */,
+				FCEACFEE20573DBC00FFC15F /* BeamerIOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,13 +93,51 @@
 		FCEACFD3204F0C9E00FFC15F /* Beamer */ = {
 			isa = PBXGroup;
 			children = (
+				FCEAD00820577ECF00FFC15F /* Extra */,
 				FCEACFD4204F0C9E00FFC15F /* AppDelegate.swift */,
-				FCEACFD6204F0C9E00FFC15F /* Assets.xcassets */,
 				FCEACFD8204F0C9E00FFC15F /* MainMenu.xib */,
-				FCEACFDB204F0C9E00FFC15F /* Info.plist */,
-				FCEACFDC204F0C9E00FFC15F /* Beamer.entitlements */,
+				FCEACFE2204F12D100FFC15F /* StatusMenuController.swift */,
+				FCEACFE62057232200FFC15F /* BeamerC.c */,
+				FCEACFE820572C8A00FFC15F /* WatchPidWrapper.swift */,
+				FCEAD01120578B4500FFC15F /* BeamerServer.swift */,
 			);
 			path = Beamer;
+			sourceTree = "<group>";
+		};
+		FCEACFEF20573DBC00FFC15F /* BeamerIOS */ = {
+			isa = PBXGroup;
+			children = (
+				FCEACFF020573DBC00FFC15F /* AppDelegate.swift */,
+				FCEACFF220573DBC00FFC15F /* ViewController.swift */,
+				FCEACFF420573DBD00FFC15F /* Main.storyboard */,
+				FCEACFF720573DBD00FFC15F /* Assets.xcassets */,
+				FCEACFF920573DBD00FFC15F /* LaunchScreen.storyboard */,
+				FCEACFFC20573DBD00FFC15F /* Info.plist */,
+				FC8098692058156F009634B0 /* RecentJobsTableViewController.swift */,
+				FC80986B20581A0C009634B0 /* RecentJobsTableViewCell.swift */,
+			);
+			path = BeamerIOS;
+			sourceTree = "<group>";
+		};
+		FCEAD00820577ECF00FFC15F /* Extra */ = {
+			isa = PBXGroup;
+			children = (
+				FCEACFD6204F0C9E00FFC15F /* Assets.xcassets */,
+				FCEACFDB204F0C9E00FFC15F /* Info.plist */,
+				FCEACFDC204F0C9E00FFC15F /* Beamer.entitlements */,
+				FCEACFE52057232200FFC15F /* BeamerC.h */,
+				FCEACFE42057232100FFC15F /* Beamer-Bridging-Header.h */,
+			);
+			path = Extra;
+			sourceTree = "<group>";
+		};
+		FCEAD00A2057852400FFC15F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCEAD00D2057854900FFC15F /* CocoaAsyncSocket.framework */,
+				FCEAD00B2057852500FFC15F /* CocoaAsyncSocket.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,6 +150,7 @@
 				FCEACFCD204F0C9E00FFC15F /* Sources */,
 				FCEACFCE204F0C9E00FFC15F /* Frameworks */,
 				FCEACFCF204F0C9E00FFC15F /* Resources */,
+				FCEAD00F205785C200FFC15F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -78,6 +159,24 @@
 			name = Beamer;
 			productName = Beamer;
 			productReference = FCEACFD1204F0C9E00FFC15F /* Beamer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FCEACFED20573DBC00FFC15F /* BeamerIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCEACFFD20573DBD00FFC15F /* Build configuration list for PBXNativeTarget "BeamerIOS" */;
+			buildPhases = (
+				FCEACFEA20573DBC00FFC15F /* Sources */,
+				FCEACFEB20573DBC00FFC15F /* Frameworks */,
+				FCEACFEC20573DBC00FFC15F /* Resources */,
+				FCEAD0102057864E00FFC15F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BeamerIOS;
+			productName = BeamerIOS;
+			productReference = FCEACFEE20573DBC00FFC15F /* BeamerIOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -91,6 +190,11 @@
 				ORGANIZATIONNAME = "Dylan Cooper";
 				TargetAttributes = {
 					FCEACFD0204F0C9E00FFC15F = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+					FCEACFED20573DBC00FFC15F = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
@@ -110,6 +214,7 @@
 			projectRoot = "";
 			targets = (
 				FCEACFD0204F0C9E00FFC15F /* Beamer */,
+				FCEACFED20573DBC00FFC15F /* BeamerIOS */,
 			);
 		};
 /* End PBXProject section */
@@ -124,14 +229,70 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FCEACFEC20573DBC00FFC15F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCEACFFB20573DBD00FFC15F /* LaunchScreen.storyboard in Resources */,
+				FCEACFF820573DBD00FFC15F /* Assets.xcassets in Resources */,
+				FCEACFF620573DBD00FFC15F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FCEAD00F205785C200FFC15F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/CocoaAsyncSocket.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		FCEAD0102057864E00FFC15F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/CocoaAsyncSocket.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FCEACFCD204F0C9E00FFC15F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCEACFE3204F12D100FFC15F /* StatusMenuController.swift in Sources */,
+				FCEACFE920572C8A00FFC15F /* WatchPidWrapper.swift in Sources */,
+				FCEACFE72057232200FFC15F /* BeamerC.c in Sources */,
+				FCEAD01220578B4500FFC15F /* BeamerServer.swift in Sources */,
 				FCEACFD5204F0C9E00FFC15F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCEACFEA20573DBC00FFC15F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCEACFF320573DBC00FFC15F /* ViewController.swift in Sources */,
+				FCEACFF120573DBC00FFC15F /* AppDelegate.swift in Sources */,
+				FC80986C20581A0C009634B0 /* RecentJobsTableViewCell.swift in Sources */,
+				FC80986A2058156F009634B0 /* RecentJobsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +305,22 @@
 				FCEACFD9204F0C9E00FFC15F /* Base */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		FCEACFF420573DBD00FFC15F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCEACFF520573DBD00FFC15F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FCEACFF920573DBD00FFC15F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCEACFFA20573DBD00FFC15F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -259,14 +436,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Beamer/Beamer.entitlements;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Beamer/Extra/Beamer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = J4N5QJ3M9D;
-				INFOPLIST_FILE = Beamer/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Beamer/Extra/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dylan-Cooper.Beamer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Beamer/Extra/Beamer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -275,15 +459,66 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Beamer/Beamer.entitlements;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Beamer/Extra/Beamer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = J4N5QJ3M9D;
-				INFOPLIST_FILE = Beamer/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Beamer/Extra/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dylan-Cooper.Beamer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Beamer/Extra/Beamer-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		FCEACFFE20573DBD00FFC15F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J4N5QJ3M9D;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = BeamerIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dylan-Cooper.BeamerIOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FCEACFFF20573DBD00FFC15F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J4N5QJ3M9D;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = BeamerIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Dylan-Cooper.BeamerIOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -304,6 +539,15 @@
 			buildConfigurations = (
 				FCEACFE0204F0C9E00FFC15F /* Debug */,
 				FCEACFE1204F0C9E00FFC15F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCEACFFD20573DBD00FFC15F /* Build configuration list for PBXNativeTarget "BeamerIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCEACFFE20573DBD00FFC15F /* Debug */,
+				FCEACFFF20573DBD00FFC15F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

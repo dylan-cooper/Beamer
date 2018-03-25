@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC30F005205F4056003F8B38 /* SelectProcessWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC30F003205F4056003F8B38 /* SelectProcessWindow.swift */; };
+		FC30F006205F4056003F8B38 /* SelectProcessWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC30F004205F4056003F8B38 /* SelectProcessWindow.xib */; };
+		FC322AF62066EE4A00CE7AC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEACFD6204F0C9E00FFC15F /* Assets.xcassets */; };
+		FC322AFB2067224F00CE7AC0 /* NearbyDevicesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC322AF92067224F00CE7AC0 /* NearbyDevicesWindow.swift */; };
+		FC322AFC2067224F00CE7AC0 /* NearbyDevicesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC322AFA2067224F00CE7AC0 /* NearbyDevicesWindow.xib */; };
+		FC322AFE206745AF00CE7AC0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC322AFD206745AE00CE7AC0 /* Message.swift */; };
+		FC322AFF206745AF00CE7AC0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC322AFD206745AE00CE7AC0 /* Message.swift */; };
 		FC80986A2058156F009634B0 /* RecentJobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8098692058156F009634B0 /* RecentJobsTableViewController.swift */; };
 		FC80986C20581A0C009634B0 /* RecentJobsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC80986B20581A0C009634B0 /* RecentJobsTableViewCell.swift */; };
+		FC9A7BDF2066DDDD00B6D345 /* DevicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9A7BDE2066DDDD00B6D345 /* DevicesTableViewController.swift */; };
+		FC9A7BE12066E70C00B6D345 /* BeamerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9A7BE02066E70C00B6D345 /* BeamerClient.swift */; };
 		FCEACFD5204F0C9E00FFC15F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEACFD4204F0C9E00FFC15F /* AppDelegate.swift */; };
 		FCEACFD7204F0C9E00FFC15F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEACFD6204F0C9E00FFC15F /* Assets.xcassets */; };
 		FCEACFDA204F0C9E00FFC15F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEACFD8204F0C9E00FFC15F /* MainMenu.xib */; };
@@ -18,7 +27,6 @@
 		FCEACFF120573DBC00FFC15F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEACFF020573DBC00FFC15F /* AppDelegate.swift */; };
 		FCEACFF320573DBC00FFC15F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEACFF220573DBC00FFC15F /* ViewController.swift */; };
 		FCEACFF620573DBD00FFC15F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCEACFF420573DBD00FFC15F /* Main.storyboard */; };
-		FCEACFF820573DBD00FFC15F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEACFF720573DBD00FFC15F /* Assets.xcassets */; };
 		FCEACFFB20573DBD00FFC15F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCEACFF920573DBD00FFC15F /* LaunchScreen.storyboard */; };
 		FCEAD00C2057852500FFC15F /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEAD00B2057852500FFC15F /* CocoaAsyncSocket.framework */; };
 		FCEAD00E2057854900FFC15F /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEAD00D2057854900FFC15F /* CocoaAsyncSocket.framework */; };
@@ -26,8 +34,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC30F003205F4056003F8B38 /* SelectProcessWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectProcessWindow.swift; sourceTree = "<group>"; };
+		FC30F004205F4056003F8B38 /* SelectProcessWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectProcessWindow.xib; sourceTree = "<group>"; };
+		FC322AF92067224F00CE7AC0 /* NearbyDevicesWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDevicesWindow.swift; sourceTree = "<group>"; };
+		FC322AFA2067224F00CE7AC0 /* NearbyDevicesWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NearbyDevicesWindow.xib; sourceTree = "<group>"; };
+		FC322AFD206745AE00CE7AC0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		FC8098692058156F009634B0 /* RecentJobsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentJobsTableViewController.swift; sourceTree = "<group>"; };
 		FC80986B20581A0C009634B0 /* RecentJobsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentJobsTableViewCell.swift; sourceTree = "<group>"; };
+		FC9A7BDE2066DDDD00B6D345 /* DevicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesTableViewController.swift; sourceTree = "<group>"; };
+		FC9A7BE02066E70C00B6D345 /* BeamerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeamerClient.swift; sourceTree = "<group>"; };
 		FCEACFD1204F0C9E00FFC15F /* Beamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCEACFD4204F0C9E00FFC15F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCEACFD6204F0C9E00FFC15F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,7 +58,6 @@
 		FCEACFF020573DBC00FFC15F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCEACFF220573DBC00FFC15F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCEACFF520573DBD00FFC15F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FCEACFF720573DBD00FFC15F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCEACFFA20573DBD00FFC15F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCEACFFC20573DBD00FFC15F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCEAD00B2057852500FFC15F /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/Mac/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
@@ -71,9 +85,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC322AF52066EE2F00CE7AC0 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FCEACFD6204F0C9E00FFC15F /* Assets.xcassets */,
+				FC322AFD206745AE00CE7AC0 /* Message.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		FCEACFC8204F0C9D00FFC15F = {
 			isa = PBXGroup;
 			children = (
+				FC322AF52066EE2F00CE7AC0 /* Shared */,
 				FCEACFD3204F0C9E00FFC15F /* Beamer */,
 				FCEACFEF20573DBC00FFC15F /* BeamerIOS */,
 				FCEACFD2204F0C9E00FFC15F /* Products */,
@@ -100,6 +124,10 @@
 				FCEACFE62057232200FFC15F /* BeamerC.c */,
 				FCEACFE820572C8A00FFC15F /* WatchPidWrapper.swift */,
 				FCEAD01120578B4500FFC15F /* BeamerServer.swift */,
+				FC30F003205F4056003F8B38 /* SelectProcessWindow.swift */,
+				FC30F004205F4056003F8B38 /* SelectProcessWindow.xib */,
+				FC322AF92067224F00CE7AC0 /* NearbyDevicesWindow.swift */,
+				FC322AFA2067224F00CE7AC0 /* NearbyDevicesWindow.xib */,
 			);
 			path = Beamer;
 			sourceTree = "<group>";
@@ -110,11 +138,12 @@
 				FCEACFF020573DBC00FFC15F /* AppDelegate.swift */,
 				FCEACFF220573DBC00FFC15F /* ViewController.swift */,
 				FCEACFF420573DBD00FFC15F /* Main.storyboard */,
-				FCEACFF720573DBD00FFC15F /* Assets.xcassets */,
 				FCEACFF920573DBD00FFC15F /* LaunchScreen.storyboard */,
 				FCEACFFC20573DBD00FFC15F /* Info.plist */,
 				FC8098692058156F009634B0 /* RecentJobsTableViewController.swift */,
 				FC80986B20581A0C009634B0 /* RecentJobsTableViewCell.swift */,
+				FC9A7BDE2066DDDD00B6D345 /* DevicesTableViewController.swift */,
+				FC9A7BE02066E70C00B6D345 /* BeamerClient.swift */,
 			);
 			path = BeamerIOS;
 			sourceTree = "<group>";
@@ -122,7 +151,6 @@
 		FCEAD00820577ECF00FFC15F /* Extra */ = {
 			isa = PBXGroup;
 			children = (
-				FCEACFD6204F0C9E00FFC15F /* Assets.xcassets */,
 				FCEACFDB204F0C9E00FFC15F /* Info.plist */,
 				FCEACFDC204F0C9E00FFC15F /* Beamer.entitlements */,
 				FCEACFE52057232200FFC15F /* BeamerC.h */,
@@ -224,6 +252,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC322AFC2067224F00CE7AC0 /* NearbyDevicesWindow.xib in Resources */,
+				FC30F006205F4056003F8B38 /* SelectProcessWindow.xib in Resources */,
 				FCEACFD7204F0C9E00FFC15F /* Assets.xcassets in Resources */,
 				FCEACFDA204F0C9E00FFC15F /* MainMenu.xib in Resources */,
 			);
@@ -233,8 +263,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC322AF62066EE4A00CE7AC0 /* Assets.xcassets in Resources */,
 				FCEACFFB20573DBD00FFC15F /* LaunchScreen.storyboard in Resources */,
-				FCEACFF820573DBD00FFC15F /* Assets.xcassets in Resources */,
 				FCEACFF620573DBD00FFC15F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,8 +308,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCEACFE3204F12D100FFC15F /* StatusMenuController.swift in Sources */,
+				FC30F005205F4056003F8B38 /* SelectProcessWindow.swift in Sources */,
+				FC322AFB2067224F00CE7AC0 /* NearbyDevicesWindow.swift in Sources */,
 				FCEACFE920572C8A00FFC15F /* WatchPidWrapper.swift in Sources */,
 				FCEACFE72057232200FFC15F /* BeamerC.c in Sources */,
+				FC322AFE206745AF00CE7AC0 /* Message.swift in Sources */,
 				FCEAD01220578B4500FFC15F /* BeamerServer.swift in Sources */,
 				FCEACFD5204F0C9E00FFC15F /* AppDelegate.swift in Sources */,
 			);
@@ -291,8 +324,11 @@
 			files = (
 				FCEACFF320573DBC00FFC15F /* ViewController.swift in Sources */,
 				FCEACFF120573DBC00FFC15F /* AppDelegate.swift in Sources */,
+				FC9A7BE12066E70C00B6D345 /* BeamerClient.swift in Sources */,
+				FC9A7BDF2066DDDD00B6D345 /* DevicesTableViewController.swift in Sources */,
 				FC80986C20581A0C009634B0 /* RecentJobsTableViewCell.swift in Sources */,
 				FC80986A2058156F009634B0 /* RecentJobsTableViewController.swift in Sources */,
+				FC322AFF206745AF00CE7AC0 /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

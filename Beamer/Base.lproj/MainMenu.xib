@@ -25,9 +25,6 @@
                 </menuItem>
                 <menuItem title="Turn Beamer Off" id="ZUD-1E-qZA" userLabel="Watch">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="watchClicked:" target="t1q-wS-JHd" id="Ex4-5K-p7i"/>
-                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="d7W-u6-zVE"/>
                 <menuItem title="Paired Devices" enabled="NO" id="XJV-ol-dUT">
@@ -99,33 +96,23 @@
                 <menuItem title="Watching Processes..." enabled="NO" id="qzX-Bm-aRv">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="Video Upload" image="NSStatusAvailable" id="4PZ-KB-WNw">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Video Upload" id="g9t-0q-aFz">
-                        <items>
-                            <menuItem title="Stop Watching" id="b6f-I3-aIX">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                        </items>
-                    </menu>
-                </menuItem>
                 <menuItem isSeparatorItem="YES" id="NLk-g6-Dlm"/>
-                <menuItem title="Watch New Process" id="e58-bk-5Pr">
+                <menuItem title="Select Application To Watch" id="e58-bk-5Pr">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="temp:" target="t1q-wS-JHd" id="tb2-Va-u5w"/>
+                        <action selector="watchNewProcessClicked:" target="t1q-wS-JHd" id="l7x-UY-4WR"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Pair With Nearby Devices" id="drI-g8-dp1">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="pairWithNearbyDevicesClicked:" target="t1q-wS-JHd" id="WGV-R6-8BU"/>
                     </connections>
                 </menuItem>
                 <menuItem title="About Beamer" id="od7-fU-khQ">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="temp:" target="t1q-wS-JHd" id="oHE-Et-D9m"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Open Beamer Preferences" allowsKeyEquivalentWhenHidden="YES" id="rqB-dj-GM7">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="temp:" target="t1q-wS-JHd" id="Uux-vL-ttm"/>
                     </connections>
                 </menuItem>
             </items>

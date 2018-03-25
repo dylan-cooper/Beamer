@@ -13,16 +13,18 @@ enum PacketTag: Int {
     case body = 2
 }
 
-protocol BonjourServerDelegate {
+protocol BeamerServerDelegate {
     func connected()
     func disconnected()
-    func handleBody(_ body: NSString?)
+    func handleBody(_ body: String?)
     func didChangeServices()
 }
 
-class BonjourServer: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, GCDAsyncSocketDelegate {
+class BeamerServer: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, GCDAsyncSocketDelegate {
     
-    var delegate: BonjourServerDelegate!
+    static let shared = BeamerServer()
+    
+    var delegate: BeamerServerDelegate?
     
     var coServiceBrowser: NetServiceBrowser!
     
@@ -47,7 +49,7 @@ class BonjourServer: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, GC
     
     func handleResponseBody(_ data: Data) {
         if let message = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
-            self.delegate.handleBody(message)
+            self.delegate?.handleBody(message as String)
         }
     }
     
@@ -73,7 +75,7 @@ class BonjourServer: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, GC
         
         self.coServiceBrowser = NetServiceBrowser()
         self.coServiceBrowser.delegate = self
-        self.coServiceBrowser.searchForServices(ofType: "_probonjore._tcp.", inDomain: "local.")
+        self.coServiceBrowser.searchForServices(ofType: "_beamer._tcp.", inDomain: "local.")
     }
     
     func send(_ data: Data) {
@@ -119,11 +121,12 @@ class BonjourServer: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, GC
         print("did resolve address \(sender.name)")
         if self.connectToServer(sender) {
             print("connected to \(sender.name)")
+            self.delegate?.connected()
         }
     }
     
     func netService(_ sender: NetService, didNotResolve errorDict: [String : NSNumber]) {
-        print("net service did no resolve. errorDict: \(errorDict)")
+        print("net service did not resolve. errorDict: \(errorDict)")
     }
     
     // MARK: GCDAsyncSocket Delegates
@@ -161,7 +164,7 @@ class BonjourServer: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, GC
     func netServiceBrowser(_ aNetServiceBrowser: NetServiceBrowser, didFind aNetService: NetService, moreComing: Bool) {
         self.devices.append(aNetService)
         if !moreComing {
-            self.delegate.didChangeServices()
+            self.delegate?.didChangeServices()
         }
     }
     
@@ -171,7 +174,7 @@ class BonjourServer: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, GC
         }
         
         if !moreComing {
-            self.delegate.didChangeServices()
+            self.delegate?.didChangeServices()
         }
     }
     

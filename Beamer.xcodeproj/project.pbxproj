@@ -14,9 +14,11 @@
 		FC322AFC2067224F00CE7AC0 /* NearbyDevicesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC322AFA2067224F00CE7AC0 /* NearbyDevicesWindow.xib */; };
 		FC322AFE206745AF00CE7AC0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC322AFD206745AE00CE7AC0 /* Message.swift */; };
 		FC322AFF206745AF00CE7AC0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC322AFD206745AE00CE7AC0 /* Message.swift */; };
-		FC80986A2058156F009634B0 /* RecentJobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8098692058156F009634B0 /* RecentJobsTableViewController.swift */; };
-		FC80986C20581A0C009634B0 /* RecentJobsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC80986B20581A0C009634B0 /* RecentJobsTableViewCell.swift */; };
-		FC9A7BDF2066DDDD00B6D345 /* DevicesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9A7BDE2066DDDD00B6D345 /* DevicesTableViewController.swift */; };
+		FC75BFFA20688024001BF7C0 /* JobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC75BFF920688024001BF7C0 /* JobManager.swift */; };
+		FC75BFFC20688082001BF7C0 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC75BFFB20688082001BF7C0 /* Job.swift */; };
+		FC75BFFD2068A05C001BF7C0 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC75BFFB20688082001BF7C0 /* Job.swift */; };
+		FC75C000206983A3001BF7C0 /* MASQUE.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC75BFFE20698391001BF7C0 /* MASQUE.ttf */; };
+		FC75C0022069D7E2001BF7C0 /* PairedDevicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC75C0012069D7E2001BF7C0 /* PairedDevicesManager.swift */; };
 		FC9A7BE12066E70C00B6D345 /* BeamerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9A7BE02066E70C00B6D345 /* BeamerClient.swift */; };
 		FCEACFD5204F0C9E00FFC15F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEACFD4204F0C9E00FFC15F /* AppDelegate.swift */; };
 		FCEACFD7204F0C9E00FFC15F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEACFD6204F0C9E00FFC15F /* Assets.xcassets */; };
@@ -39,9 +41,10 @@
 		FC322AF92067224F00CE7AC0 /* NearbyDevicesWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDevicesWindow.swift; sourceTree = "<group>"; };
 		FC322AFA2067224F00CE7AC0 /* NearbyDevicesWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NearbyDevicesWindow.xib; sourceTree = "<group>"; };
 		FC322AFD206745AE00CE7AC0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		FC8098692058156F009634B0 /* RecentJobsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentJobsTableViewController.swift; sourceTree = "<group>"; };
-		FC80986B20581A0C009634B0 /* RecentJobsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentJobsTableViewCell.swift; sourceTree = "<group>"; };
-		FC9A7BDE2066DDDD00B6D345 /* DevicesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesTableViewController.swift; sourceTree = "<group>"; };
+		FC75BFF920688024001BF7C0 /* JobManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobManager.swift; sourceTree = "<group>"; };
+		FC75BFFB20688082001BF7C0 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		FC75BFFE20698391001BF7C0 /* MASQUE.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MASQUE.ttf; sourceTree = "<group>"; };
+		FC75C0012069D7E2001BF7C0 /* PairedDevicesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairedDevicesManager.swift; sourceTree = "<group>"; };
 		FC9A7BE02066E70C00B6D345 /* BeamerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeamerClient.swift; sourceTree = "<group>"; };
 		FCEACFD1204F0C9E00FFC15F /* Beamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCEACFD4204F0C9E00FFC15F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,8 +91,10 @@
 		FC322AF52066EE2F00CE7AC0 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				FC75BFFE20698391001BF7C0 /* MASQUE.ttf */,
 				FCEACFD6204F0C9E00FFC15F /* Assets.xcassets */,
 				FC322AFD206745AE00CE7AC0 /* Message.swift */,
+				FC75BFFB20688082001BF7C0 /* Job.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -118,16 +123,18 @@
 			isa = PBXGroup;
 			children = (
 				FCEAD00820577ECF00FFC15F /* Extra */,
-				FCEACFD4204F0C9E00FFC15F /* AppDelegate.swift */,
-				FCEACFD8204F0C9E00FFC15F /* MainMenu.xib */,
-				FCEACFE2204F12D100FFC15F /* StatusMenuController.swift */,
 				FCEACFE62057232200FFC15F /* BeamerC.c */,
-				FCEACFE820572C8A00FFC15F /* WatchPidWrapper.swift */,
+				FCEACFD4204F0C9E00FFC15F /* AppDelegate.swift */,
 				FCEAD01120578B4500FFC15F /* BeamerServer.swift */,
-				FC30F003205F4056003F8B38 /* SelectProcessWindow.swift */,
-				FC30F004205F4056003F8B38 /* SelectProcessWindow.xib */,
+				FC75BFF920688024001BF7C0 /* JobManager.swift */,
 				FC322AF92067224F00CE7AC0 /* NearbyDevicesWindow.swift */,
+				FC75C0012069D7E2001BF7C0 /* PairedDevicesManager.swift */,
+				FC30F003205F4056003F8B38 /* SelectProcessWindow.swift */,
+				FCEACFE2204F12D100FFC15F /* StatusMenuController.swift */,
+				FCEACFE820572C8A00FFC15F /* WatchPidWrapper.swift */,
 				FC322AFA2067224F00CE7AC0 /* NearbyDevicesWindow.xib */,
+				FC30F004205F4056003F8B38 /* SelectProcessWindow.xib */,
+				FCEACFD8204F0C9E00FFC15F /* MainMenu.xib */,
 			);
 			path = Beamer;
 			sourceTree = "<group>";
@@ -135,15 +142,12 @@
 		FCEACFEF20573DBC00FFC15F /* BeamerIOS */ = {
 			isa = PBXGroup;
 			children = (
-				FCEACFF020573DBC00FFC15F /* AppDelegate.swift */,
-				FCEACFF220573DBC00FFC15F /* ViewController.swift */,
-				FCEACFF420573DBD00FFC15F /* Main.storyboard */,
-				FCEACFF920573DBD00FFC15F /* LaunchScreen.storyboard */,
 				FCEACFFC20573DBD00FFC15F /* Info.plist */,
-				FC8098692058156F009634B0 /* RecentJobsTableViewController.swift */,
-				FC80986B20581A0C009634B0 /* RecentJobsTableViewCell.swift */,
-				FC9A7BDE2066DDDD00B6D345 /* DevicesTableViewController.swift */,
+				FCEACFF020573DBC00FFC15F /* AppDelegate.swift */,
 				FC9A7BE02066E70C00B6D345 /* BeamerClient.swift */,
+				FCEACFF220573DBC00FFC15F /* ViewController.swift */,
+				FCEACFF920573DBD00FFC15F /* LaunchScreen.storyboard */,
+				FCEACFF420573DBD00FFC15F /* Main.storyboard */,
 			);
 			path = BeamerIOS;
 			sourceTree = "<group>";
@@ -151,10 +155,10 @@
 		FCEAD00820577ECF00FFC15F /* Extra */ = {
 			isa = PBXGroup;
 			children = (
-				FCEACFDB204F0C9E00FFC15F /* Info.plist */,
+				FCEACFE42057232100FFC15F /* Beamer-Bridging-Header.h */,
 				FCEACFDC204F0C9E00FFC15F /* Beamer.entitlements */,
 				FCEACFE52057232200FFC15F /* BeamerC.h */,
-				FCEACFE42057232100FFC15F /* Beamer-Bridging-Header.h */,
+				FCEACFDB204F0C9E00FFC15F /* Info.plist */,
 			);
 			path = Extra;
 			sourceTree = "<group>";
@@ -225,6 +229,11 @@
 					FCEACFED20573DBC00FFC15F = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -265,6 +274,7 @@
 			files = (
 				FC322AF62066EE4A00CE7AC0 /* Assets.xcassets in Resources */,
 				FCEACFFB20573DBD00FFC15F /* LaunchScreen.storyboard in Resources */,
+				FC75C000206983A3001BF7C0 /* MASQUE.ttf in Resources */,
 				FCEACFF620573DBD00FFC15F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +317,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC75BFFA20688024001BF7C0 /* JobManager.swift in Sources */,
+				FC75C0022069D7E2001BF7C0 /* PairedDevicesManager.swift in Sources */,
 				FCEACFE3204F12D100FFC15F /* StatusMenuController.swift in Sources */,
 				FC30F005205F4056003F8B38 /* SelectProcessWindow.swift in Sources */,
 				FC322AFB2067224F00CE7AC0 /* NearbyDevicesWindow.swift in Sources */,
@@ -315,6 +327,7 @@
 				FC322AFE206745AF00CE7AC0 /* Message.swift in Sources */,
 				FCEAD01220578B4500FFC15F /* BeamerServer.swift in Sources */,
 				FCEACFD5204F0C9E00FFC15F /* AppDelegate.swift in Sources */,
+				FC75BFFC20688082001BF7C0 /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,10 +338,8 @@
 				FCEACFF320573DBC00FFC15F /* ViewController.swift in Sources */,
 				FCEACFF120573DBC00FFC15F /* AppDelegate.swift in Sources */,
 				FC9A7BE12066E70C00B6D345 /* BeamerClient.swift in Sources */,
-				FC9A7BDF2066DDDD00B6D345 /* DevicesTableViewController.swift in Sources */,
-				FC80986C20581A0C009634B0 /* RecentJobsTableViewCell.swift in Sources */,
-				FC80986A2058156F009634B0 /* RecentJobsTableViewController.swift in Sources */,
 				FC322AFF206745AF00CE7AC0 /* Message.swift in Sources */,
+				FC75BFFD2068A05C001BF7C0 /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -461,6 +473,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -471,7 +484,7 @@
 		FCEACFE0204F0C9E00FFC15F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Mac";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Beamer/Extra/Beamer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -494,7 +507,7 @@
 		FCEACFE1204F0C9E00FFC15F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Mac";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Beamer/Extra/Beamer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -516,7 +529,7 @@
 		FCEACFFE20573DBD00FFC15F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-iOS";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J4N5QJ3M9D;
@@ -538,7 +551,7 @@
 		FCEACFFF20573DBD00FFC15F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-iOS";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J4N5QJ3M9D;
@@ -568,7 +581,7 @@
 				FCEACFDE204F0C9E00FFC15F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		FCEACFDF204F0C9E00FFC15F /* Build configuration list for PBXNativeTarget "Beamer" */ = {
 			isa = XCConfigurationList;
@@ -577,7 +590,7 @@
 				FCEACFE1204F0C9E00FFC15F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		FCEACFFD20573DBD00FFC15F /* Build configuration list for PBXNativeTarget "BeamerIOS" */ = {
 			isa = XCConfigurationList;
@@ -586,7 +599,7 @@
 				FCEACFFF20573DBD00FFC15F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CYI-Ur-PAL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nYw-Nq-Wcv">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,26 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings-->
-        <scene sceneID="VX1-dR-RV9">
-            <objects>
-                <viewController id="HnA-b1-kjY" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hWJ-uT-dBy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="xra-nd-fzf"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="1zK-YY-bMD"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BWr-PK-1s5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2350" y="1293"/>
-        </scene>
         <!--Recent Jobs-->
         <scene sceneID="2QV-FB-1aa">
             <objects>
-                <tableViewController id="LeF-zE-HSt" customClass="RecentJobsTableViewController" customModule="BeamerIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="LeF-zE-HSt" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CUY-cE-zt3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,38 +61,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOQ-Bi-7HT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1284" y="688"/>
+            <point key="canvasLocation" x="-1314" y="-6"/>
         </scene>
-        <!--Devices-->
-        <scene sceneID="WEr-01-jFh">
-            <objects>
-                <tableViewController id="z6m-SI-px4" customClass="DevicesTableViewController" customModule="BeamerIOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="azk-Wd-TFt">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Vk2-7M-LOA">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vk2-7M-LOA" id="qaQ-17-pZe">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="z6m-SI-px4" id="kjJ-l6-ZIQ"/>
-                            <outlet property="delegate" destination="z6m-SI-px4" id="xLc-ee-LGm"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Devices" id="ZoS-b1-t8e"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZAS-Iq-HDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1284" y="0.0"/>
-        </scene>
-        <!--Home-->
+        <!--View Controller-->
         <scene sceneID="FSZ-Bd-VV4">
             <objects>
                 <viewController id="nYw-Nq-Wcv" customClass="ViewController" customModule="BeamerIOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -116,53 +71,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZr-be-X9X">
-                                <rect key="frame" x="115.5" y="210" width="89" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="Send"/>
-                                <connections>
-                                    <action selector="sendClicked:" destination="nYw-Nq-Wcv" eventType="touchUpInside" id="FZY-Hu-pdG"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmf-Jz-nyO">
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="nJY-9X-psI">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temporary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OL-dG-uYM">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="nJY-9X-psI" firstAttribute="top" secondItem="hmf-Jz-nyO" secondAttribute="top" id="CMe-we-p8n"/>
+                                    <constraint firstAttribute="trailing" secondItem="nJY-9X-psI" secondAttribute="trailing" id="Jau-YY-4uX"/>
+                                    <constraint firstItem="nJY-9X-psI" firstAttribute="leading" secondItem="hmf-Jz-nyO" secondAttribute="leading" id="dL3-K6-WaD"/>
+                                    <constraint firstItem="nJY-9X-psI" firstAttribute="width" secondItem="hmf-Jz-nyO" secondAttribute="width" id="kNB-ws-hk0"/>
+                                    <constraint firstAttribute="bottom" secondItem="nJY-9X-psI" secondAttribute="bottom" id="vhS-et-Ynp"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="RZr-be-X9X" firstAttribute="centerX" secondItem="wZV-Q1-EbR" secondAttribute="centerX" id="7aw-GU-WzJ"/>
-                            <constraint firstItem="RZr-be-X9X" firstAttribute="centerY" secondItem="wZV-Q1-EbR" secondAttribute="centerY" id="U8W-OM-Mbn"/>
+                            <constraint firstItem="hmf-Jz-nyO" firstAttribute="top" secondItem="ejL-Kb-GTv" secondAttribute="top" id="1ll-Ta-ddb"/>
+                            <constraint firstItem="hmf-Jz-nyO" firstAttribute="leading" secondItem="ejL-Kb-GTv" secondAttribute="leading" id="eaK-rI-vvx"/>
+                            <constraint firstItem="ejL-Kb-GTv" firstAttribute="trailing" secondItem="hmf-Jz-nyO" secondAttribute="trailing" id="u2Z-ie-bY1"/>
+                            <constraint firstItem="ejL-Kb-GTv" firstAttribute="bottom" secondItem="hmf-Jz-nyO" secondAttribute="bottom" id="wGx-Yk-qm9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ejL-Kb-GTv"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="cO7-hE-8He"/>
+                    <connections>
+                        <outlet property="mainStackView" destination="nJY-9X-psI" id="d2C-ij-3VE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ltw-WH-JtO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2116" y="-788"/>
+            <point key="canvasLocation" x="-2116.875" y="-788.75"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="UKG-TB-cxK">
-            <objects>
-                <tabBarController id="CYI-Ur-PAL" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uyy-FX-cce">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="nYw-Nq-Wcv" kind="relationship" relationship="viewControllers" id="yvL-ax-Rus"/>
-                        <segue destination="LeF-zE-HSt" kind="relationship" relationship="viewControllers" id="G9H-4V-xe3"/>
-                        <segue destination="HnA-b1-kjY" kind="relationship" relationship="viewControllers" id="5aN-ck-aCx"/>
-                        <segue destination="z6m-SI-px4" kind="relationship" relationship="viewControllers" id="sQR-ZW-LcF"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="3iD-Al-pEX"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5CC-y1-ecY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2612" y="179"/>
-        </scene>
-        <!--Item-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BeamerIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,11 +199,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="cPK-L6-qXq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1284" y="-645"/>
+            <point key="canvasLocation" x="-1314" y="-743"/>
         </scene>
     </scenes>
     <resources>

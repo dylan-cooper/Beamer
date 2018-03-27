@@ -8,17 +8,14 @@
 
 import Cocoa
 
-protocol NearbyDevicesDelegate {
-    func deviceWasSelected(device: String)
-}
 
 class NearbyDevicesWindow: NSWindowController, BeamerServerDelegate, NSTableViewDelegate, NSTableViewDataSource {
 
-    var delegate: NearbyDevicesDelegate?
-    
+    var generatedCode: String?
     @IBOutlet weak var tableView: NSTableView!
-    
     @IBOutlet var numbersTextField: NSTextField!
+
+    var selectedService: NetService?
     
     override var windowNibName: NSNib.Name! {
         return NSNib.Name("NearbyDevicesWindow")
@@ -30,44 +27,86 @@ class NearbyDevicesWindow: NSWindowController, BeamerServerDelegate, NSTableView
         self.window?.makeKeyAndOrderFront(nil)
         NSApp.activate(ignoringOtherApps: true)
 
-        BeamerServer.shared.delegate = self
+        BeamerServer.shared.addDelegate(name: "NearbyDevicesWindow", delegate: self)
     }
     
     @IBAction func pairButtonClicked(_ sender: Any) {
         if tableView.selectedRow > -1 {
-            let device = BeamerServer.shared.devices[tableView.selectedRow]
-            print(device)
-            BeamerServer.shared.connectTo(device)
+            selectedService = BeamerServer.shared.services[tableView.selectedRow]
+            BeamerServer.shared.connectTo(selectedService!)
         }
-
+    }
+    
+    func updateCode() {
+        let number = arc4random_uniform(1000000)
+        generatedCode = String(format: "%06d", number)
     }
     
     func showModal() {
+        updateCode()
+        numbersTextField.stringValue = self.generatedCode ?? "ERROR"
         let alert = NSAlert()
-        alert.messageText = "Hello"
+        alert.messageText = "Use this code to connect with the device:"
         alert.accessoryView = numbersTextField
         alert.addButton(withTitle: "OK")
         alert.runModal()
-
+    }
+    
+    func sendPairRequest() {
+        let message = Message(type: .pairRequest)
+        BeamerServer.shared.sendToSpecificService(self.selectedService!, message)
+    }
+    
+    func sendCodeAccepted() {
+        let message = Message(type: .codeAccepted)
+        BeamerServer.shared.sendToSpecificService(self.selectedService!, message)
+        PairedDevicesManager.shared.saveDevice(name: self.selectedService!.name)
+        self.close()
+    }
+    
+    func sendCodeRejected() {
+        let message = Message(type: .codeRejected)
+        BeamerServer.shared.sendToSpecificService(self.selectedService!, message)
+    }
+    
+    func checkCode(sentCode: String?) {
+        guard let sent = sentCode, let generated = generatedCode else {
+            print("One of the codes doesn't exist")
+            return
+        }
+        
+        if (sent == generated) {
+            print("code accepted")
+            sendCodeAccepted()
+        } else {
+            print("code rejected")
+            sendCodeRejected()
+        }
     }
     
     // MARK: BeamerServerDelegate
 
     func connected() {
-        let message = Message(type: .pairRequest)
-        let encoder = JSONEncoder()
-        let data = try! encoder.encode(message)
-        print(String(data: data, encoding: .utf8) as Any)
-        BeamerServer.shared.send(data)
+        sendPairRequest()
+        showModal()
+    }
+    
+    func failedToConnect() {
+        // TODO: Show "Failed to connect" modal
     }
     
     func disconnected() {
         // TODO: ??
     }
 
-    func handleBody(_ body: String?) {
-        print("handleBody \(String(describing: body))")
-        showModal()
+    func handleMessage(_ message: Message) {
+        switch message.type {
+        case .sendingCode:
+            print(String(describing: message.payload))
+            checkCode(sentCode: message.payload)
+        default:
+            print("No action for this message type: \(message.type)")
+        }
     }
     
     func didChangeServices() {
@@ -75,7 +114,7 @@ class NearbyDevicesWindow: NSWindowController, BeamerServerDelegate, NSTableView
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return BeamerServer.shared.devices.count
+        return BeamerServer.shared.services.count
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -83,7 +122,7 @@ class NearbyDevicesWindow: NSWindowController, BeamerServerDelegate, NSTableView
         var cellIdentifier: String = ""
         
         if tableColumn == tableView.tableColumns[0] {
-            text = BeamerServer.shared.devices[row].name
+            text = BeamerServer.shared.services[row].name
             cellIdentifier = "DeviceCellID"
         } else if tableColumn == tableView.tableColumns[1] {
             text = "" // TODO: figure out a status

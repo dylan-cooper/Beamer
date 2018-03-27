@@ -15,8 +15,9 @@ enum PacketTag: Int {
 
 protocol BeamerServerDelegate {
     func connected()
+    func failedToConnect()
     func disconnected()
-    func handleBody(_ body: String?)
+    func handleMessage(_ message: Message)
     func didChangeServices()
 }
 
@@ -24,38 +25,60 @@ class BeamerServer: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, GCD
     
     static let shared = BeamerServer()
     
-    var delegate: BeamerServerDelegate?
-    
+    var delegates: [String: BeamerServerDelegate] = [:]
     var coServiceBrowser: NetServiceBrowser!
+    var services: [NetService] = []
+    var connectedServices: [NetService] = []
+    var socketsWithNames: [(String, GCDAsyncSocket)] = []
     
-    var devices: Array<NetService>!
-    
-    var connectedService: NetService!
-    
-    var sockets: [String : GCDAsyncSocket]!
+    let serviceType: String = "_beamer._tcp."
+    let serviceDomain: String = "local."
     
     override init() {
         super.init()
-        self.devices = []
-        self.sockets = [:]
-        self.startService()
+        self.startBrowsing()
     }
     
-    func parseHeader(_ data: Data) -> UInt {
+    func addDelegate(name: String, delegate: BeamerServerDelegate) {
+        self.delegates[name] = delegate
+    }
+    
+    func removeDelegate(name: String) {
+        self.delegates.removeValue(forKey: name)
+    }
+    
+    private func parseHeader(_ data: Data) -> UInt {
         var out: UInt = 0
         (data as NSData).getBytes(&out, length: MemoryLayout<UInt>.size)
         return out
     }
     
     func handleResponseBody(_ data: Data) {
-        if let message = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
-            self.delegate?.handleBody(message as String)
+        let decoder = JSONDecoder()
+        let message = try! decoder.decode(Message.self, from: data)
+        for (_, delegate) in self.delegates {
+            delegate.handleMessage(message)
         }
+        //self.delegate?.handleMessage(message)
+    }
+    
+    func getServiceWithName(_ name: String) -> NetService? {
+        let filtered = services.filter() { $0.name == name }
+        if filtered.count > 0 {
+            return filtered[0]
+        }
+        return nil
+    }
+    
+    func hasConnectedServiceWithName(_ name: String) -> Bool {
+        let filtered = connectedServices.filter() {$0.name == name}
+        return filtered.count > 0
     }
     
     func connectTo(_ service: NetService) {
         service.delegate = self
-        service.resolve(withTimeout: 15)
+        print(service)
+        service.resolve(withTimeout: 3)
     }
     
     // MARK: NSNetServiceBrowser helpers
@@ -68,44 +91,69 @@ class BeamerServer: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, GCD
         }
     }
     
-    func startService() {
-        if self.devices != nil {
-            self.devices.removeAll(keepingCapacity: true)
-        }
-        
+    func startBrowsing() {
+        self.services.removeAll(keepingCapacity: true)
         self.coServiceBrowser = NetServiceBrowser()
         self.coServiceBrowser.delegate = self
-        self.coServiceBrowser.searchForServices(ofType: "_beamer._tcp.", inDomain: "local.")
+        self.coServiceBrowser.searchForServices(ofType: serviceType,
+                                                inDomain: serviceDomain)
     }
     
-    func send(_ data: Data) {
-        print("send data")
+    func sendToSpecificService(_ service: NetService, _ message: Message) {
+        let encoder = JSONEncoder()
+        let data = try! encoder.encode(message)
+        print("send message")
+        let selected = self.socketsWithNames.first { (val: (String, GCDAsyncSocket)) -> Bool in
+            return val.0 == service.name
+        }
         
-        if let socket = self.getSelectedSocket() {
+        if let socket = selected?.1 {
             var header = data.count
             let headerData = Data(bytes: &header, count: MemoryLayout<UInt>.size)
             socket.write(headerData, withTimeout: -1.0, tag: PacketTag.header.rawValue)
             socket.write(data, withTimeout: -1.0, tag: PacketTag.body.rawValue)
+        } else {
+            print("Something has gone wrong - socket doesn't exist for service")
         }
     }
     
-    func connectToServer(_ service: NetService) -> Bool {
-        var connected = false
-        
+    func sendToAll(_ message: Message) {
+        for service in self.connectedServices {
+            sendToSpecificService(service, message)
+        }
+    }
+    
+    // Does the work of actually connecting to the service.
+    // Some logical errors here?
+    func doConnectToService(_ service: NetService) -> Bool {
+
         let addresses: Array = service.addresses!
-        var socket = self.sockets[service.name]
+        print("Addresses: \(addresses[0])")
         
-        if !(socket?.isConnected != nil) {
-            socket = GCDAsyncSocket(delegate: self, delegateQueue: DispatchQueue.main)
-            
-            while !connected && !addresses.isEmpty {
+        let selected = self.socketsWithNames.first { (val: (String, GCDAsyncSocket)) -> Bool in
+            return val.0 == service.name
+        }
+        
+        let socket = selected?.1 ?? GCDAsyncSocket(delegate: self, delegateQueue: DispatchQueue.main)
+
+        if !socket.isConnected {
+            while !addresses.isEmpty {
                 let address: Data = addresses[0]
                 do {
-                    if (try socket?.connect(toAddress: address) != nil) {
-                        self.sockets.updateValue(socket!, forKey: service.name)
-                        self.connectedService = service
-                        connected = true
+                    try socket.connect(toAddress: address)
+                    
+                    // remove anything with this name (just to be safe)
+                    self.socketsWithNames = self.socketsWithNames.filter { (val: (String, GCDAsyncSocket)) -> Bool in
+                        return val.0 != service.name
                     }
+                    
+                    
+                    // add to the list of sockets
+                    self.socketsWithNames.append((service.name, socket))
+                    
+                    // add to the list of connected services
+                    self.connectedServices.append(service)
+                    return true
                 } catch {
                     print(error);
                 }
@@ -119,14 +167,23 @@ class BeamerServer: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, GCD
     
     func netServiceDidResolveAddress(_ sender: NetService) {
         print("did resolve address \(sender.name)")
-        if self.connectToServer(sender) {
+        if self.doConnectToService(sender) {
             print("connected to \(sender.name)")
-            self.delegate?.connected()
+            for (_, delegate) in self.delegates {
+                delegate.connected()
+            }
         }
     }
     
     func netService(_ sender: NetService, didNotResolve errorDict: [String : NSNumber]) {
         print("net service did not resolve. errorDict: \(errorDict)")
+        for (_, delegate) in self.delegates {
+            delegate.failedToConnect()
+        }
+    }
+    
+    func netService(_ sender: NetService, didAcceptConnectionWith inputStream: InputStream, outputStream: OutputStream) {
+        print("didAcceptConnectionWith")
     }
     
     // MARK: GCDAsyncSocket Delegates
@@ -138,20 +195,32 @@ class BeamerServer: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, GCD
     
     func socketDidDisconnect(_ sock: GCDAsyncSocket, withError err: Error?) {
         print("socket did disconnect \(sock), error: \(String(describing: err?._userInfo))")
+        // get the name
+        let socketWithName = self.socketsWithNames.first { (val: (String, GCDAsyncSocket)) -> Bool in
+            return val.1 == sock
+        }
+        if let name = socketWithName?.0 {
+            // remove from list
+            self.connectedServices = self.connectedServices.filter({ (service) -> Bool in
+                service.name != name
+            })
+        
+            // inform delegates
+            for (_, delegate) in self.delegates {
+                delegate.disconnected()
+            }
+        }
     }
     
     func socket(_ sock: GCDAsyncSocket, didRead data: Data, withTag tag: Int) {
         print("socket did read data. tag: \(tag)")
         
-        if self.getSelectedSocket() == sock {
-            
-            if data.count == MemoryLayout<UInt>.size {
-                let bodyLength: UInt = self.parseHeader(data)
-                sock.readData(toLength: bodyLength, withTimeout: -1, tag: PacketTag.body.rawValue)
-            } else {
-                self.handleResponseBody(data)
-                sock.readData(toLength: UInt(MemoryLayout<UInt>.size), withTimeout: -1, tag: PacketTag.header.rawValue)
-            }
+        if data.count == MemoryLayout<UInt>.size {
+            let bodyLength: UInt = self.parseHeader(data)
+            sock.readData(toLength: bodyLength, withTimeout: -1, tag: PacketTag.body.rawValue)
+        } else {
+            self.handleResponseBody(data)
+            sock.readData(toLength: UInt(MemoryLayout<UInt>.size), withTimeout: -1, tag: PacketTag.header.rawValue)
         }
     }
     
@@ -162,38 +231,23 @@ class BeamerServer: NSObject, NetServiceBrowserDelegate, NetServiceDelegate, GCD
     // MARK: NSNetServiceBrowser Delegates
     
     func netServiceBrowser(_ aNetServiceBrowser: NetServiceBrowser, didFind aNetService: NetService, moreComing: Bool) {
-        self.devices.append(aNetService)
+        self.services.append(aNetService)
         if !moreComing {
-            self.delegate?.didChangeServices()
+            for (_, delegate) in self.delegates {
+                delegate.didChangeServices()
+            }
         }
     }
     
     func netServiceBrowser(_ aNetServiceBrowser: NetServiceBrowser, didRemove aNetService: NetService, moreComing: Bool) {
-        if let index = self.devices.index(where: {$0 == aNetService}) {
-            self.devices.remove(at: index)
+        if let index = self.services.index(where: {$0 == aNetService}) {
+            self.services.remove(at: index)
         }
         
         if !moreComing {
-            self.delegate?.didChangeServices()
+            for (_, delegate) in self.delegates {
+                delegate.didChangeServices()
+            }
         }
     }
-    
-    func netServiceBrowserDidStopSearch(_ aNetServiceBrowser: NetServiceBrowser) {
-        self.stopBrowsing()
-    }
-    
-    func netServiceBrowser(_ aNetServiceBrowser: NetServiceBrowser, didNotSearch errorDict: [String : NSNumber]) {
-        self.stopBrowsing()
-    }
-    
-    // MARK: helpers
-    
-    func getSelectedSocket() -> GCDAsyncSocket? {
-        var sock: GCDAsyncSocket?
-        if self.connectedService != nil {
-            sock = self.sockets[self.connectedService.name]!
-        }
-        return sock
-    }
-    
 }

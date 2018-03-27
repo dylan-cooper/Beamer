@@ -15,82 +15,17 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="t1q-wS-JHd" customClass="StatusMenuController" customModule="Beamer" customModuleProvider="target">
             <connections>
+                <outlet property="devicesEndingSeparatorMenuItem" destination="3wF-GA-dz9" id="aw0-YY-iop"/>
+                <outlet property="devicesHeaderMenuItem" destination="XJV-ol-dUT" id="gEl-4m-1Xz"/>
+                <outlet property="jobsEndingSeparatorMenuItem" destination="NLk-g6-Dlm" id="rhd-vC-xGV"/>
+                <outlet property="jobsHeaderMenuItem" destination="qzX-Bm-aRv" id="nAr-dw-onH"/>
                 <outlet property="statusMenu" destination="yMH-Ys-XP2" id="OWw-sm-zXX"/>
             </connections>
         </customObject>
         <menu id="yMH-Ys-XP2">
             <items>
-                <menuItem title="Beamer: On" enabled="NO" id="qdv-hu-rt4">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-                <menuItem title="Turn Beamer Off" id="ZUD-1E-qZA" userLabel="Watch">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-                <menuItem isSeparatorItem="YES" id="d7W-u6-zVE"/>
                 <menuItem title="Paired Devices" enabled="NO" id="XJV-ol-dUT">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-                <menuItem title="Dylan's iPhone" image="NSStatusAvailable" id="iv1-PG-8Ep">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Dylan's iPhone" id="0Xe-qL-iSb">
-                        <items>
-                            <menuItem title="Disconnect" id="vX0-Gz-CKh">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="temp:" target="t1q-wS-JHd" id="Ats-vL-l1g"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="hng-uM-PKH"/>
-                            <menuItem title="Preferences" id="eM3-ED-6aO">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="temp:" target="t1q-wS-JHd" id="APL-mN-9dH"/>
-                                </connections>
-                            </menuItem>
-                        </items>
-                    </menu>
-                </menuItem>
-                <menuItem title="Dylan's iPad" image="NSStatusUnavailable" id="wq0-Xr-JSv">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Dylan's iPad" id="DWI-cj-X7i">
-                        <items>
-                            <menuItem title="Connect" id="e0t-ZT-Gjl">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="kGI-Yr-KLv"/>
-                            <menuItem title="Preferences" id="bWv-H9-e7j">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                        </items>
-                    </menu>
-                </menuItem>
-                <menuItem title="Joe's iPad" image="NSStatusUnavailable" id="zm3-Bh-OwN" userLabel="Joe's iPad">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Joe's iPad" id="faw-VF-apT">
-                        <items>
-                            <menuItem title="Connect" id="joX-Of-qYu">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="Gqt-Fq-qvi"/>
-                            <menuItem title="Preferences" id="5RL-Cb-Niv">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                        </items>
-                    </menu>
-                </menuItem>
-                <menuItem title="Work iPad" image="NSStatusUnavailable" id="46T-g9-k7S">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Work iPad" id="r4f-5I-oJ6">
-                        <items>
-                            <menuItem title="Connect" id="Rmg-Ge-NFB">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="dcE-22-nrA"/>
-                            <menuItem title="Preferences" id="kcb-YA-QfS">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
-                        </items>
-                    </menu>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="3wF-GA-dz9"/>
                 <menuItem title="Watching Processes..." enabled="NO" id="qzX-Bm-aRv">
@@ -103,23 +38,38 @@
                         <action selector="watchNewProcessClicked:" target="t1q-wS-JHd" id="l7x-UY-4WR"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Send Debug Message" id="peJ-uK-snF">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="sendDebugMessageClicked:" target="t1q-wS-JHd" id="G0f-Tn-ZGg"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="hJu-wI-sW6"/>
                 <menuItem title="Pair With Nearby Devices" id="drI-g8-dp1">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="pairWithNearbyDevicesClicked:" target="t1q-wS-JHd" id="WGV-R6-8BU"/>
                     </connections>
                 </menuItem>
-                <menuItem title="About Beamer" id="od7-fU-khQ">
+                <menuItem title="Connect With Paired Devices" id="38v-cK-CXb">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="temp:" target="t1q-wS-JHd" id="oHE-Et-D9m"/>
+                        <action selector="connectWithPairedDevicesClicked:" target="t1q-wS-JHd" id="iQg-0u-kwY"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Clear Paired Devices" id="ROs-9X-PY9">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="clearPairedDevicesClicked:" target="t1q-wS-JHd" id="N16-G9-kpT"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="diX-zr-M2b"/>
+                <menuItem title="Quit Beamer" keyEquivalent="q" id="od7-fU-khQ">
+                    <connections>
+                        <action selector="quitClicked:" target="t1q-wS-JHd" id="kfL-M3-yLi"/>
                     </connections>
                 </menuItem>
             </items>
         </menu>
     </objects>
-    <resources>
-        <image name="NSStatusAvailable" width="16" height="16"/>
-        <image name="NSStatusUnavailable" width="16" height="16"/>
-    </resources>
 </document>
